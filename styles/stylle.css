@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 80%;
+  height: 800px;
+  border: 1px solid black;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.neymar {
+  background-color: blue;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+}
+
+.carrinho {
+  background-color: red;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  animation: enemy-animation 2s infinite linear;
+}
+
+.mariaChuteira {
+  background-color: palevioletred;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 10%;
+  animation: enemy-animation 2s infinite linear;
+}
+
+.falsosAmigos {
+  background-color: green;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  left: 90%;
+  animation: enemy-animation 2s infinite linear;
+}
+
+@keyframes enemy-animation {
+  from {
+    top: -100px;
+  }
+
+  to {
+    top: 100%;
+  }
+}

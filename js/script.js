@@ -1,5 +1,6 @@
 const neymar = document.querySelector(".neymar");
 let px = 450;
+const carrinho = document.querySelector(".carrinho");
 
 // Neymar's movimentation
 
@@ -15,4 +16,9 @@ function move() {
 }
 document.addEventListener("keydown", move);
 
-// s
+// Middle enemy position verification
+
+const loop = setInterval(() => {
+  const carrinhoPosition = carrinho.offsetTop;
+  console.log(carrinhoPosition);
+}, 10);

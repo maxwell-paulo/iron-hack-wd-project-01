@@ -15,12 +15,13 @@
 }
 
 .neymar {
-  background-color: blue;
+  background-color: white;
   width: 50px;
   height: 50px;
   position: absolute;
   bottom: 0;
   left: 450px;
+  border: 1px black solid;
 }
 
 .carrinho {
@@ -30,7 +31,8 @@
   position: absolute;
   top: 0;
   left: 450px;
-  animation: enemy-animation 2s linear;
+  top: 268px;
+  /* animation: enemy-animation 2s linear; */
 }
 
 .mariaChuteira {
@@ -40,7 +42,7 @@
   position: absolute;
   top: 0;
   left: 150px;
-  animation: enemy-animation 2s linear;
+  /* animation: enemy-animation 2s linear; */
 }
 
 .falsosAmigos {
@@ -50,7 +52,7 @@
   position: absolute;
   top: 0;
   left: 750px;
-  animation: enemy-animation 2s linear;
+  /* animation: enemy-animation 2s linear; */
 }
 
 @keyframes enemy-animation {

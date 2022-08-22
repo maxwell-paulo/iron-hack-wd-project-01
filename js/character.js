@@ -1,0 +1,32 @@
+import { getInputDirection } from "./input.js";
+import { gameBoard } from "./Game-board.js";
+
+export const neymarSpeed = 5;
+
+const neymar = [{ x: 20, y: 20 }];
+
+export function update() {
+  const inputDirection = getInputDirection();
+
+  neymar[0].x += inputDirection.x;
+  neymar[0].y += inputDirection.y;
+}
+
+export function draw() {
+  neymar.forEach((segment) => {
+    const neymarElement = document.createElement("div");
+
+    neymarElement.classList.add("neymar");
+
+    neymarElement.style.gridRowStart = segment.y;
+    neymarElement.style.gridColumnStart = segment.x;
+
+    gameBoard.appendChild(neymarElement);
+  });
+}
+
+export function collission(position) {
+  return neymar.some((segment) => {
+    return position.x === segment.x && position.y === segment.y;
+  });
+}

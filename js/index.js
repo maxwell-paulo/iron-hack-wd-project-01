@@ -4,7 +4,11 @@ import {
   update as neymarUpdate,
 } from "./character.js";
 import { gameBoard } from "./Game-board.js";
-import { draw as enemyDraw, update as EnemyUpdate } from "./enemy.js";
+import {
+  draw as enemyDraw,
+  update as EnemyUpdate,
+  start as EnemyStart,
+} from "./enemy.js";
 
 let lastTimeRender = 0;
 
@@ -21,6 +25,8 @@ function main(currentTime) {
   update();
 
   draw();
+
+  start();
 }
 
 function update() {
@@ -32,6 +38,10 @@ function update() {
 function draw() {
   neymarDraw();
   enemyDraw();
+}
+
+function start() {
+  EnemyStart;
 }
 
 window.requestAnimationFrame(main);

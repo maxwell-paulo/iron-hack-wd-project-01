@@ -2,7 +2,7 @@ import {
   neymarSpeed,
   draw as neymarDraw,
   update as neymarUpdate,
-} from "./character";
+} from "./character.js";
 
 let lastTimeRender = 0;
 

@@ -1,15 +1,36 @@
 import {
   neymarSpeed,
-  draw as neymarDraw,
-  update as neymarUpdate,
+  draw as characterDraw,
+  update as characterUpdate,
+  characterPosition,
 } from "./character.js";
 import { gameBoard } from "./Game-board.js";
-import { draw as enemyDraw, update as EnemyUpdate } from "./enemy.js";
+import {
+  draw as enemyDraw,
+  update as enemyUpdate,
+  enemyPosition,
+} from "./enemy.js";
 
 let lastTimeRender = 0;
 
-// current time = milisencods
+let gameOver = false;
+
 function main(currentTime) {
+  if (
+    characterPosition.x == enemyPosition.x &&
+    characterPosition.y == enemyPosition.y
+  ) {
+    gameOver = true;
+  }
+  if (gameOver) {
+    if (confirm("Você perdeu!")) {
+      window.location.reload();
+    } else {
+      window.requestAnimationFrame(main);
+    }
+    return;
+  }
+
   window.requestAnimationFrame(main);
 
   const secondSinceLastRender = (currentTime - lastTimeRender) / 1000;
@@ -25,15 +46,14 @@ function main(currentTime) {
 
 function update() {
   gameBoard.innerHTML = "";
-  neymarUpdate();
-  EnemyUpdate();
+  characterUpdate();
+  enemyUpdate();
 }
 
 function draw() {
-  neymarDraw();
+  characterDraw();
   enemyDraw();
 }
 
+// function checkGameOver() {}
 window.requestAnimationFrame(main);
-
-// Neymar

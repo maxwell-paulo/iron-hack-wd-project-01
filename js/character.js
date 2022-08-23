@@ -3,30 +3,36 @@ import { gameBoard } from "./Game-board.js";
 
 export const neymarSpeed = 5;
 
-const neymar = [{ x: 20, y: 20 }];
+export const characterPosition = { x: 20, y: 20 };
 
+// Character movimentation
 export function update() {
   const inputDirection = getInputDirection();
 
-  neymar[0].x += inputDirection.x;
-  neymar[0].y += inputDirection.y;
+  characterPosition.x += inputDirection.x;
+  if (characterPosition.x <= 1) {
+    inputDirection.x = 1;
+  }
+  if (characterPosition.x > 39) {
+    inputDirection.x = -1;
+  }
+  characterPosition.y += inputDirection.y;
 }
 
+// character generation
 export function draw() {
-  neymar.forEach((segment) => {
-    const neymarElement = document.createElement("div");
+  const characterElement = document.createElement("div");
 
-    neymarElement.classList.add("neymar");
+  characterElement.classList.add("neymar");
 
-    neymarElement.style.gridRowStart = segment.y;
-    neymarElement.style.gridColumnStart = segment.x;
+  characterElement.style.gridRowStart = characterPosition.y;
+  characterElement.style.gridColumnStart = characterPosition.x;
 
-    gameBoard.appendChild(neymarElement);
-  });
+  gameBoard.appendChild(characterElement);
 }
 
-export function collission(position) {
-  return neymar.some((segment) => {
-    return position.x === segment.x && position.y === segment.y;
-  });
-}
+// export function collision(position) {
+//   return neymar.some((segment) => {
+//     return position.x === segment.x && position.y === segment.y;
+//   });
+// }

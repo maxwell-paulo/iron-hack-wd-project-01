@@ -6,8 +6,8 @@ import {
 import { gameBoard } from "./Game-board.js";
 import {
   draw as enemyDraw,
-  update as EnemyUpdate,
-  start as EnemyStart,
+  update as enemyUpdate,
+  down as enemyDown,
 } from "./enemy.js";
 
 let lastTimeRender = 0;
@@ -25,14 +25,12 @@ function main(currentTime) {
   update();
 
   draw();
-
-  start();
 }
 
 function update() {
   gameBoard.innerHTML = "";
   neymarUpdate();
-  EnemyUpdate();
+  enemyUpdate();
 }
 
 function draw() {
@@ -40,10 +38,9 @@ function draw() {
   enemyDraw();
 }
 
-function start() {
-  EnemyStart;
+function down() {
+  enemyDown();
 }
-
 window.requestAnimationFrame(main);
 
 // Neymar

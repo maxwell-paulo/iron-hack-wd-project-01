@@ -4,7 +4,6 @@ let inputDirection = {
 };
 
 window.addEventListener("keydown", (e) => {
-  console.log(e.key);
   switch (e.key) {
     case "ArrowLeft":
       inputDirection.x = -1;

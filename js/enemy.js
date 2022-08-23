@@ -1,9 +1,10 @@
 import { gameBoard, generateRandomBoardPosition } from "./Game-board.js";
 import { getEnemyDirection } from "./input.js";
 
-// gerar inimigo na posição aleatória
-let enemyPosition = generateRandomPosition();
+// Enemy randon generation
+export let enemyPosition = generateRandomPosition();
 
+// Enemy movimentation
 export function update() {
   const enemyDirection = getEnemyDirection();
 
@@ -11,8 +12,10 @@ export function update() {
   if (enemyPosition.y > 20) {
     enemyPosition = generateRandomPosition();
   }
+  // console.log(enemyPosition);
 }
 
+// Enemy first generation
 export function draw() {
   const enemyElement = document.createElement("div");
   enemyElement.classList.add("enemy");
@@ -27,28 +30,3 @@ function generateRandomPosition() {
 
   return newEnemyPosition;
 }
-
-// fazer o inimigo descer na tela
-
-// let speed;
-// let deslocY;
-// let position;
-// let animation;
-
-// export function down() {
-//   speed = 1;
-//   deslocY = 1;
-//   position = enemyPosition.y;
-//   move();
-// }
-
-// function move() {
-//   // console.log(position);
-//   position += deslocY * speed;
-//   enemyElement.style.marginTop = `${position}px`;
-//   animation = requestAnimationFrame(move);
-//   if (position > 600) {
-//     cancelAnimationFrame(animation);
-//   }
-//   window.addEventListener("click", down);
-// }

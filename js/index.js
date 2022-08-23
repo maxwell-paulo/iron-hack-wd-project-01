@@ -9,6 +9,7 @@ import {
   update as enemyUpdate,
   enemyPosition,
 } from "./enemy.js";
+import { updateCowntdown } from "./Timer.js";
 
 let gameSpeed = 5;
 
@@ -56,5 +57,4 @@ function draw() {
   enemyDraw();
 }
 
-// function checkGameOver() {}
 window.requestAnimationFrame(main);

@@ -35,3 +35,16 @@ body {
   height: 20px;
   border: 1px solid black;
 }
+
+#countdown {
+  color: white;
+  background-color: black;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  font-size: 50px;
+  height: 70px;
+  width: 200px;
+  border: 1px solid white;
+}

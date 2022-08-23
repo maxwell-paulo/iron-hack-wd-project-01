@@ -7,7 +7,7 @@ import { gameBoard } from "./Game-board.js";
 import {
   draw as enemyDraw,
   update as enemyUpdate,
-  down as enemyDown,
+  // down as enemyDown,
 } from "./enemy.js";
 
 let lastTimeRender = 0;
@@ -38,9 +38,7 @@ function draw() {
   enemyDraw();
 }
 
-function down() {
-  enemyDown();
-}
 window.requestAnimationFrame(main);
+window.addEventListener("click", main);
 
 // Neymar

@@ -15,6 +15,7 @@ export function update() {
   if (neymar[0].x > 39) {
     inputDirection.x = -1;
   }
+  neymar[0].y += inputDirection.y;
 }
 
 export function draw() {

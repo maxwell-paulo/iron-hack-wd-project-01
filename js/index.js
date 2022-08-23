@@ -23,7 +23,12 @@ function main(currentTime) {
     gameOver = true;
   }
   if (gameOver) {
-    alert("Você perdeu!");
+    if (confirm("Você perdeu!")) {
+      window.location.reload();
+    } else {
+      window.requestAnimationFrame(main);
+    }
+    return;
   }
 
   window.requestAnimationFrame(main);

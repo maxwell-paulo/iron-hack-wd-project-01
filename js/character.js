@@ -1,8 +1,7 @@
 import { getInputDirection } from "./input.js";
 import { gameBoard } from "./Game-board.js";
 
-export const neymarSpeed = 5;
-
+// Character initial position
 export const characterPosition = { x: 20, y: 20 };
 
 // Character movimentation

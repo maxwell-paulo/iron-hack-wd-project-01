@@ -1,5 +1,4 @@
 import {
-  neymarSpeed,
   draw as characterDraw,
   update as characterUpdate,
   characterPosition,
@@ -10,6 +9,8 @@ import {
   update as enemyUpdate,
   enemyPosition,
 } from "./enemy.js";
+
+let gameSpeed = 5;
 
 let lastTimeRender = 0;
 
@@ -35,7 +36,7 @@ function main(currentTime) {
 
   const secondSinceLastRender = (currentTime - lastTimeRender) / 1000;
 
-  if (secondSinceLastRender < 1 / neymarSpeed) return;
+  if (secondSinceLastRender < 1 / gameSpeed) return;
 
   lastTimeRender = currentTime;
 

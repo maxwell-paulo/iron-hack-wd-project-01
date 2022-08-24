@@ -1,7 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap");
+
+@font-face {
+  font-family: digital;
+  src: url("../DS-DIGII.TTF") format("truetype");
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+html {
+  font-family: roboto;
 }
 
 body {
@@ -10,14 +20,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("../Images/arquibancada\ teste\ 4.png");
+  background-image: url("../Images/arquibancada.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 #game-board {
-  background-image: url("../Images/campos\ teste\ 3.jpeg");
+  background-image: url("../Images/campo.jpeg");
   height: 400px;
   width: 800px;
   display: grid;
@@ -47,13 +57,14 @@ body {
 }
 
 #countdown {
+  font-family: digital;
   color: white;
   background-color: black;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   margin: 0;
-  font-size: 50px;
+  font-size: 80px;
   height: 70px;
   width: 200px;
   border: 1px solid white;
@@ -66,5 +77,23 @@ body {
 }
 
 #star-buttom {
+  font-family: "black ops one";
+  background-color: yellow;
+  border: none;
+  font-size: 40px;
   position: absolute;
+  padding: 15px;
+  color: green;
+}
+
+.life-icon {
+  width: 100px;
+  background-color: whitesmoke;
+  border: 1px solid black;
+}
+
+#footer {
+  justify-content: space-between;
+  gap: 10px;
+  display: flex;
 }

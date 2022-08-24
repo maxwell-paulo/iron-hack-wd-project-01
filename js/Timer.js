@@ -21,6 +21,4 @@ export function updateCowntdown() {
   countdownElement.innerHTML = `0${minutes}:${seconds}`;
   time--;
   count += 1;
-
-  console.log(count);
 }

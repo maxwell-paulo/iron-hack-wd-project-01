@@ -20,6 +20,7 @@ import {
 } from "./Enemies/Final-enemy.js";
 
 let gameSpeed = 7;
+let life = 2;
 
 export let lastTimeRender = 0;
 

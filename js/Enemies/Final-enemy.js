@@ -9,14 +9,15 @@ export function update() {
   const finalEnemyDireticon = getEnemyDirection();
 
   finalEnemyPosition.y += finalEnemyDireticon.y;
-  if (finalEnemyPosition.y > 20) {
+  if (finalEnemyPosition.y > 15) {
     finalEnemyPosition = generateNewRandomPosition();
   }
 }
 
 // Enemy first generation
 export function draw() {
-  const finalEnemyElement = document.createElement("div");
+  const finalEnemyElement = document.createElement("img");
+  finalEnemyElement.src = "/Images/mbappe.png";
   finalEnemyElement.classList.add("new-enemy");
   finalEnemyElement.style.gridRowStart = finalEnemyPosition.y;
   finalEnemyElement.style.gridColumnStart = finalEnemyPosition.x;

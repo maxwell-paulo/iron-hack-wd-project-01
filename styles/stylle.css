@@ -36,24 +36,19 @@ body {
 }
 
 .neymar {
-  background-color: blue;
-  width: 20px;
-  height: 20px;
-  border: 1px solid black;
+  width: 80px;
 }
 
 .enemy {
-  background-color: red;
-  width: 20px;
-  height: 20px;
-  border: 1px solid black;
+  width: 80px;
 }
 
 .new-enemy {
-  background-color: yellow;
-  width: 20px;
-  height: 20px;
-  border: 1px solid black;
+  width: 80px;
+}
+
+.final-enemy {
+  width: 80px;
 }
 
 #countdown {

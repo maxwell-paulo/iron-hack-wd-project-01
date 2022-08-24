@@ -9,14 +9,15 @@ export function update() {
   const newEnemyDirection = getEnemyDirection();
 
   newEnemyPosiotion.y += newEnemyDirection.y;
-  if (newEnemyPosiotion.y > 20) {
+  if (newEnemyPosiotion.y > 15) {
     newEnemyPosiotion = generateNewRandomPosition();
   }
 }
 
 // Enemy first generation
 export function draw() {
-  const newEnemyElement = document.createElement("div");
+  const newEnemyElement = document.createElement("img");
+  newEnemyElement.src = "/Images/argentino.png";
   newEnemyElement.classList.add("new-enemy");
   newEnemyElement.style.gridRowStart = newEnemyPosiotion.y;
   newEnemyElement.style.gridColumnStart = newEnemyPosiotion.x;

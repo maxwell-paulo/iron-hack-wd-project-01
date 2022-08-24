@@ -9,14 +9,15 @@ export function update() {
   const enemyDirection = getEnemyDirection();
 
   enemyPosition.y += enemyDirection.y;
-  if (enemyPosition.y > 20) {
+  if (enemyPosition.y > 15) {
     enemyPosition = generateRandomPosition();
   }
 }
 
 // Enemy first generation
 export function draw() {
-  const enemyElement = document.createElement("div");
+  const enemyElement = document.createElement("img");
+  enemyElement.src = "/Images/maria chuetira.png";
   enemyElement.classList.add("enemy");
   enemyElement.style.gridRowStart = enemyPosition.y;
   enemyElement.style.gridColumnStart = enemyPosition.x;

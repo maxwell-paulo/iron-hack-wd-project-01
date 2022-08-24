@@ -1,5 +1,5 @@
-import { gameBoard, generateRandomBoardPosition } from "./Game-board.js";
-import { getEnemyDirection } from "./input.js";
+import { gameBoard, generateRandomBoardPosition } from "../Game-board.js";
+import { getEnemyDirection } from "../input.js";
 
 // Enemy randon generation
 export let enemyPosition = generateRandomPosition();
@@ -12,7 +12,6 @@ export function update() {
   if (enemyPosition.y > 20) {
     enemyPosition = generateRandomPosition();
   }
-  // console.log(enemyPosition);
 }
 
 // Enemy first generation
@@ -26,7 +25,7 @@ export function draw() {
 }
 
 function generateRandomPosition() {
-  let newEnemyPosition = generateRandomBoardPosition();
+  let enemyNewPosition = generateRandomBoardPosition();
 
-  return newEnemyPosition;
+  return enemyNewPosition;
 }

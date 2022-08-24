@@ -1,7 +1,8 @@
+export let count = 0;
 const startingMinutes = 1;
 let time = startingMinutes * 60;
 export const startButtom = document.getElementById("star-buttom");
-const countdownElement = document.getElementById("countdown");
+export const countdownElement = document.getElementById("countdown");
 let refreshIntervalId;
 
 startButtom.addEventListener("click", () => {
@@ -19,4 +20,7 @@ export function updateCowntdown() {
   }
   countdownElement.innerHTML = `0${minutes}:${seconds}`;
   time--;
+  count += 1;
+
+  console.log(count);
 }

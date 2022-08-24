@@ -12,7 +12,7 @@ export function update() {
   if (characterPosition.x <= 1) {
     inputDirection.x = 1;
   }
-  if (characterPosition.x > 39) {
+  if (characterPosition.x > 37) {
     inputDirection.x = -1;
   }
   characterPosition.y += inputDirection.y;

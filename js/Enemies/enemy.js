@@ -3,13 +3,15 @@ import { getEnemyDirection } from "../input.js";
 
 // Enemy randon generation
 export let enemyPosition = generateRandomPosition();
-
 // Enemy movimentation
 export function update() {
   const enemyDirection = getEnemyDirection();
 
   enemyPosition.y += enemyDirection.y;
   if (enemyPosition.y > 15) {
+    enemyPosition = generateRandomPosition();
+  }
+  if (enemyPosition.x > 37) {
     enemyPosition = generateRandomPosition();
   }
 }
@@ -23,6 +25,7 @@ export function draw() {
   enemyElement.style.gridColumnStart = enemyPosition.x;
 
   gameBoard.appendChild(enemyElement);
+  console.log(typeof enemyPosition.x);
 }
 
 function generateRandomPosition() {

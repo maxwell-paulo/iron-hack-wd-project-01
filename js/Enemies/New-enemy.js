@@ -12,6 +12,9 @@ export function update() {
   if (newEnemyPosiotion.y > 15) {
     newEnemyPosiotion = generateNewRandomPosition();
   }
+  if (newEnemyPosiotion.x > 37) {
+    newEnemyPosiotion = generateNewRandomPosition();
+  }
 }
 
 // Enemy first generation

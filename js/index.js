@@ -90,7 +90,6 @@ function draw() {
   if (count > 5) {
     newEnemyDraw();
   }
-
   if (count > 15) {
     finalEnemyDraw();
   }

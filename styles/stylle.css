@@ -10,11 +10,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-image: url("../Images/arquibancada\ teste\ 4.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 #game-board {
-  background: white;
+  background-image: url("../Images/campos\ teste\ 3.jpeg");
   height: 400px;
   width: 800px;
   display: grid;

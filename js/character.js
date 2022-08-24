@@ -2,7 +2,7 @@ import { getInputDirection } from "./input.js";
 import { gameBoard } from "./Game-board.js";
 
 // Character initial position
-export const characterPosition = { x: 20, y: 20 };
+export const characterPosition = { x: 20, y: 15 };
 
 // Character movimentation
 export function update() {
@@ -12,7 +12,7 @@ export function update() {
   if (characterPosition.x <= 1) {
     inputDirection.x = 1;
   }
-  if (characterPosition.x > 39) {
+  if (characterPosition.x > 37) {
     inputDirection.x = -1;
   }
   characterPosition.y += inputDirection.y;
@@ -20,7 +20,8 @@ export function update() {
 
 // character generation
 export function draw() {
-  const characterElement = document.createElement("div");
+  const characterElement = document.createElement("img");
+  characterElement.src = "../Images/Neymar.png";
 
   characterElement.classList.add("neymar");
 

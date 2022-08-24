@@ -8,18 +8,35 @@ import {
   draw as enemyDraw,
   update as enemyUpdate,
   enemyPosition,
-} from "./enemy.js";
+} from "./Enemies/enemy.js";
+import {
+  draw as newEnemyDraw,
+  update as newEnemyUpdate,
+  newEnemyPosiotion,
+} from "./Enemies/New-enemy.js";
+import { count, updateCowntdown } from "./Timer.js";
+import {
+  draw as finalEnemyDraw,
+  update as finalEnemyUpdate,
+  finalEnemyPosition,
+} from "./Enemies/Final-enemy.js";
 
-let gameSpeed = 5;
+let gameSpeed = 7;
+let life = 2;
 
-let lastTimeRender = 0;
+export let lastTimeRender = 0;
 
 let gameOver = false;
 
 function main(currentTime) {
+  // Game over condition
   if (
-    characterPosition.x == enemyPosition.x &&
-    characterPosition.y == enemyPosition.y
+    (characterPosition.x === enemyPosition.x &&
+      characterPosition.y === enemyPosition.y) ||
+    (characterPosition.x === newEnemyPosiotion.x &&
+      characterPosition.y === newEnemyPosiotion.y) ||
+    (characterPosition.x === finalEnemyPosition.x &&
+      characterPosition.y === finalEnemyPosition.y)
   ) {
     gameOver = true;
   }
@@ -43,18 +60,45 @@ function main(currentTime) {
   update();
 
   draw();
+
+  if (count > 25) {
+    gameSpeed = 10;
+  }
+
+  if (count > 35) {
+    gameSpeed = 15;
+  }
+
+  if (count > 45) {
+    gameSpeed = 20;
+  }
+
+  if (count >= 61) {
+    if (confirm("Você Ganhou!")) {
+      window.location.reload();
+    } else {
+      window.requestAnimationFrame(main);
+    }
+  }
 }
 
 function update() {
   gameBoard.innerHTML = "";
   characterUpdate();
   enemyUpdate();
+  newEnemyUpdate();
+  finalEnemyUpdate();
 }
 
 function draw() {
   characterDraw();
   enemyDraw();
+  if (count > 5) {
+    newEnemyDraw();
+  }
+  if (count > 15) {
+    finalEnemyDraw();
+  }
 }
 
-// function checkGameOver() {}
 window.requestAnimationFrame(main);

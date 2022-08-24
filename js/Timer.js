@@ -1,23 +1,22 @@
 const startingMinutes = 1;
 let time = startingMinutes * 60;
-
+export const startButtom = document.getElementById("star-buttom");
 const countdownElement = document.getElementById("countdown");
+let refreshIntervalId;
 
-let refreshIntervalId = setInterval(updateCowntdown, 1000);
+startButtom.addEventListener("click", () => {
+  refreshIntervalId = setInterval(updateCowntdown, 1000);
+  startButtom.style.display = "none";
+});
 
 export function updateCowntdown() {
   const minutes = Math.floor(time / 60);
   let seconds = time % 60;
 
   seconds = seconds < 10 ? "0" + seconds : seconds;
-
-  countdownElement.innerHTML = `${minutes}:${seconds}`;
-  time--;
-
-  if (time < 0) {
-    //stop the setInterval whe time = 0 for avoid negative time
+  if (time <= 0) {
     clearInterval(refreshIntervalId);
   }
+  countdownElement.innerHTML = `0${minutes}:${seconds}`;
+  time--;
 }
-
-window.addEventListener("keydown", updateCowntdown);

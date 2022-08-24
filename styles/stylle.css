@@ -54,3 +54,7 @@ body {
   flex-direction: column;
   gap: 10px;
 }
+
+#star-buttom {
+  position: absolute;
+}

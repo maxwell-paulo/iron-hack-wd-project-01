@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: digital;
-  src: url("../DS-DIGII.TTF") format("truetype");
+  src: url("../fonts/DS-DIGII.TTF") format("truetype");
 }
 
 * {

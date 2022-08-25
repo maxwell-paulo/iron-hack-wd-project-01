@@ -9,7 +9,7 @@ export function update() {
   const newEnemyDirection = getEnemyDirection();
 
   newEnemyPosiotion.y += newEnemyDirection.y;
-  if (newEnemyPosiotion.y > 15) {
+  if (newEnemyPosiotion.y > 16) {
     newEnemyPosiotion = generateNewRandomPosition();
   }
   if (newEnemyPosiotion.x > 37) {

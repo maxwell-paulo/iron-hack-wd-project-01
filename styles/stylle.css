@@ -36,19 +36,23 @@ body {
 }
 
 .neymar {
-  width: 80px;
+  width: 30px;
+  border: 1px solid black;
 }
 
 .enemy {
-  width: 80px;
+  width: 30px;
+  border: 1px solid black;
 }
 
 .new-enemy {
-  width: 80px;
+  width: 30px;
+  border: 1px solid black;
 }
 
 .final-enemy {
-  width: 80px;
+  width: 30px;
+  border: 1px solid black;
 }
 
 #countdown {

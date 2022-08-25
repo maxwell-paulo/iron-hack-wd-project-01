@@ -1,8 +1,10 @@
 import { getInputDirection } from "./input.js";
 import { gameBoard } from "./Game-board.js";
 
+export const characterElement = document.createElement("img");
+
 // Character initial position
-export const characterPosition = { x: 20, y: 15 };
+export const characterPosition = { x: 20, y: 16 };
 
 // Character movimentation
 export function update() {
@@ -20,8 +22,7 @@ export function update() {
 
 // character generation
 export function draw() {
-  const characterElement = document.createElement("img");
-  characterElement.src = "../Images/Neymar.png";
+  characterElement.src = "../Images/neymar.png";
 
   characterElement.classList.add("neymar");
 

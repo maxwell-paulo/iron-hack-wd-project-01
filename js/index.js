@@ -2,19 +2,26 @@ import {
   draw as characterDraw,
   update as characterUpdate,
   characterPosition,
+  characterElement,
 } from "./character.js";
+
 import { gameBoard } from "./Game-board.js";
+
 import {
   draw as enemyDraw,
   update as enemyUpdate,
   enemyPosition,
+  enemyElement,
 } from "./Enemies/enemy.js";
+
 import {
   draw as newEnemyDraw,
   update as newEnemyUpdate,
   newEnemyPosiotion,
 } from "./Enemies/New-enemy.js";
+
 import { count, updateCowntdown } from "./Timer.js";
+
 import {
   draw as finalEnemyDraw,
   update as finalEnemyUpdate,
@@ -31,12 +38,10 @@ let gameOver = false;
 function main(currentTime) {
   // Game over condition
   if (
-    (characterPosition.x === enemyPosition.x &&
-      characterPosition.y === enemyPosition.y) ||
+    (characterPosition.x === enemyPosition.x && enemyPosition.y >= 14) ||
     (characterPosition.x === newEnemyPosiotion.x &&
-      characterPosition.y === newEnemyPosiotion.y) ||
-    (characterPosition.x === finalEnemyPosition.x &&
-      characterPosition.y === finalEnemyPosition.y)
+      newEnemyPosiotion.y >= 14) ||
+    (characterPosition.x === finalEnemyPosition.x && finalEnemyPosition.y >= 14)
   ) {
     gameOver = true;
   }

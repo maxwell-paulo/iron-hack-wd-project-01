@@ -28,8 +28,9 @@ import {
   finalEnemyPosition,
 } from "./Enemies/Final-enemy.js";
 
+import { lifeCounter, life } from "./Life.js";
+
 let gameSpeed = 7;
-let life = 2;
 
 export let lastTimeRender = 0;
 
@@ -37,12 +38,7 @@ let gameOver = false;
 
 function main(currentTime) {
   // Game over condition
-  if (
-    (characterPosition.x === enemyPosition.x && enemyPosition.y >= 14) ||
-    (characterPosition.x === newEnemyPosiotion.x &&
-      newEnemyPosiotion.y >= 14) ||
-    (characterPosition.x === finalEnemyPosition.x && finalEnemyPosition.y >= 14)
-  ) {
+  if (life === 0) {
     gameOver = true;
   }
   if (gameOver) {
@@ -85,6 +81,8 @@ function main(currentTime) {
       window.requestAnimationFrame(main);
     }
   }
+
+  lifeCounter();
 }
 
 function update() {

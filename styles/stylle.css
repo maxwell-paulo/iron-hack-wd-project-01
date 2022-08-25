@@ -37,22 +37,18 @@ body {
 
 .neymar {
   width: 30px;
-  border: 1px solid black;
 }
 
 .enemy {
   width: 30px;
-  border: 1px solid black;
 }
 
 .new-enemy {
   width: 30px;
-  border: 1px solid black;
 }
 
 .final-enemy {
   width: 30px;
-  border: 1px solid black;
 }
 
 #countdown {

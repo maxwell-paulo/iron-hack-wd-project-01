@@ -20,7 +20,7 @@ export function update() {
 // Enemy first generation
 export function draw() {
   const newEnemyElement = document.createElement("img");
-  newEnemyElement.src = "/Images/argentino.png";
+  newEnemyElement.src = "../../Images/argentino.png";
   newEnemyElement.classList.add("new-enemy");
   newEnemyElement.style.gridRowStart = newEnemyPosiotion.y;
   newEnemyElement.style.gridColumnStart = newEnemyPosiotion.x;

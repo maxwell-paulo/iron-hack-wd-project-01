@@ -20,7 +20,7 @@ export function update() {
 // Enemy first generation
 export function draw() {
   const finalEnemyElement = document.createElement("img");
-  finalEnemyElement.src = "/Images/mbappe.png";
+  finalEnemyElement.src = "../../Images/mbappe.png";
   finalEnemyElement.classList.add("new-enemy");
   finalEnemyElement.style.gridRowStart = finalEnemyPosition.y;
   finalEnemyElement.style.gridColumnStart = finalEnemyPosition.x;

@@ -19,7 +19,7 @@ export function update() {
 // Enemy first generation
 export function draw() {
   const enemyElement = document.createElement("img");
-  enemyElement.src = "/Images/maria chuetira.png";
+  enemyElement.src = "../../Images/maria chuetira.png";
   enemyElement.classList.add("enemy");
   enemyElement.style.gridRowStart = enemyPosition.y;
   enemyElement.style.gridColumnStart = enemyPosition.x;

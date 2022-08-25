@@ -20,14 +20,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("../Images/arquibancada.png");
+  background-image: url("../images/arquibancada.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 #game-board {
-  background-image: url("../Images/campo.jpeg");
+  background-image: url("../images/campo.jpeg");
   height: 400px;
   width: 800px;
   display: grid;
@@ -37,6 +37,7 @@ body {
 
 .neymar {
   width: 30px;
+  border: 1px solid black;
 }
 
 .enemy {

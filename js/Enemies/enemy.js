@@ -1,5 +1,7 @@
 import { gameBoard, generateRandomBoardPosition } from "../Game-board.js";
 import { getEnemyDirection } from "../input.js";
+import { newEnemyPosiotion } from "./New-enemy.js";
+import { finalEnemyPosition } from "./Final-enemy.js";
 
 export const enemyElement = document.createElement("img");
 
@@ -20,7 +22,8 @@ export function update() {
 
 // Enemy first generation
 export function draw() {
-  enemyElement.src = "../../Images/maria chuteira.png";
+  enemyElement.setAttribute("src", "../../images/maria-chuteira.png");
+  enemyElement.setAttribute("alt", "enemy img");
   enemyElement.classList.add("enemy");
   enemyElement.style.gridRowStart = enemyPosition.y;
   enemyElement.style.gridColumnStart = enemyPosition.x;

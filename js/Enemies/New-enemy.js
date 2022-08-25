@@ -1,5 +1,7 @@
 import { gameBoard, generateRandomBoardPosition } from "../Game-board.js";
 import { getEnemyDirection } from "../input.js";
+import { enemyPosition } from "./enemy.js";
+import { finalEnemyPosition } from "./Final-enemy.js";
 
 // Enemy randon generation
 export let newEnemyPosiotion = generateNewRandomPosition();
@@ -15,12 +17,16 @@ export function update() {
   if (newEnemyPosiotion.x > 37) {
     newEnemyPosiotion = generateNewRandomPosition();
   }
+  if (newEnemyPosiotion.x === enemyPosition.x) {
+    newEnemyPosiotion = generateNewRandomPosition();
+  }
 }
 
 // Enemy first generation
 export function draw() {
   const newEnemyElement = document.createElement("img");
-  newEnemyElement.src = "../../Images/argentino.png";
+  newEnemyElement.setAttribute("src", "../../images/argentino.png");
+  newEnemyElement.setAttribute("alt", "new enemy element");
   newEnemyElement.classList.add("new-enemy");
   newEnemyElement.style.gridRowStart = newEnemyPosiotion.y;
   newEnemyElement.style.gridColumnStart = newEnemyPosiotion.x;

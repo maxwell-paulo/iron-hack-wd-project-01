@@ -22,8 +22,8 @@ export function update() {
 
 // character generation
 export function draw() {
-  characterElement.src = "../Images/neymar.png";
-
+  characterElement.setAttribute("src", "../images/neymar.png");
+  characterElement.setAttribute("alt", "neymar img");
   characterElement.classList.add("neymar");
 
   characterElement.style.gridRowStart = characterPosition.y;
@@ -31,9 +31,3 @@ export function draw() {
 
   gameBoard.appendChild(characterElement);
 }
-
-// export function collision(position) {
-//   return neymar.some((segment) => {
-//     return position.x === segment.x && position.y === segment.y;
-//   });
-// }
